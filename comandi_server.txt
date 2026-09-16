@@ -1,0 +1,2 @@
+activate //attiva il server
+py mange.py runserver //parte il server
