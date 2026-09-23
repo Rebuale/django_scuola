@@ -1,0 +1,1 @@
+C:\Users\rebua\Documents\GitHub\django_scuola\env\Scripts\activate
