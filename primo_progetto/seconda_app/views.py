@@ -11,3 +11,5 @@ def if_else_elif(request):
 def es_for(request):
     dic ={"list1" : [1, datetime.date(2026,10,5), "Non mollare!"], "list2" : [2, datetime.date(2026,10,6), "Non mollare!"], 'my_dict' : {'chiave1': 'Valore 1', 'chiave2': 'Valore 2'}}
     return render (request, "seconda_app/es_ciclo_for.html", dic)
+def index(request):
+    return render(request, "seconda_app/index.html")

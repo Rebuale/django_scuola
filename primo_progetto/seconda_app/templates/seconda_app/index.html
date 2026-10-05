@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+{% block content %}
+    <ol>
+        <li><a href="{% url 'seconda_app:index' %}">index</a></li>
+        <li><a href="{% url 'seconda_app:es_if' %}">esercizio if</a></li>
+        <li><a href="{% url 'seconda_app:if_else_elif' %}">esercizio if else elif</a></li>
+        <li><a href="{% url 'seconda_app:es_ciclo_for' %}">esercizio ciclo for</a></li>
+    </ol>
+{% endblock content %}
