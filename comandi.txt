@@ -1,0 +1,8 @@
+-- RUNNARE DJANGO
+ESEGUIRE MIGRATIONS: python manage.py migrate
+ESEGUIRE RUNSERVER: python manage.py runserver
+
+-- CREAZIONE/GESTIONE APP o PROGETTI
+CREA PROGETTO: django-admin startproject <nome_progetto>
+CREA APPLICAZIONE: py manage.py startapp <nome_app>
+CREA ADMIN: py manage.py createsuperuser
