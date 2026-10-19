@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Massimo{% endblock %}
+{% block content %}
+    {%if var1 > var2 and var1 > var3%}
+        <p style="color: green;">{{var1}}</p>
+        <p style="color: black;">{{var2}}</p>
+        <p style="color: black;">{{var3}}</p>
+    {%elif var2 > var1 and var2 > var3 %}
+         <p style="color: green;">{{var2}}</p>
+         <p style="color: black;">{{var1}}</p>
+         <p style="color: black;">{{var3}}</p>
+    {%elif var3 > var1 and var3 > var2 %}
+        <p style="color: green;">{{var3}}</p>
+        <p style="color: black;">{{var1}}</p>
+        <p style="color: black;">{{var2}}</p>
+    {% endif %}
+{% endblock content %}

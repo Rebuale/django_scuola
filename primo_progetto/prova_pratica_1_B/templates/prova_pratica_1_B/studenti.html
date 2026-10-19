@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Studenti{% endblock %}
+{% block content %}
+    <table>
+        <tr>
+            <td>STUDENTE</td>
+            <td>PRESENZA</td>
+        </tr>
+        {%for studente,presenza in studenti.items%}
+            <tr>
+                <td><p>{{studente}}</p></td>
+                <td>
+                    {%if presenza%}
+                        <p style="color: green;">Presente</p>
+                    {%else%}
+                        <p style="color: red;">Assente</p>
+                    {%endif%}
+                </td>
+            </tr>
+        {%endfor%}
+    </table>
+{% endblock content %}

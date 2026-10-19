@@ -53,6 +53,19 @@
                             <li><a class="dropdown-item" href="{% url 'seconda_app:es_ciclo_for' %}">esercizio for</a></li>
                         </ul>
                     </li>
+
+                    <!-- Dropdown Seconda app -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="secondaAppDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Prova Pratica
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="secondaAppDropdown">
+                            <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:index' %}">Index</a></li>
+                            <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:massimo' %}">Massimo</a></li>
+                             <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:pari' %}">Pari</a></li>   
+                            <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:studenti' %}">Studente</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
