@@ -14,7 +14,7 @@ class Articolo(models.Model):
     giornalista = models.ForeignKey(Giornalista, on_delete=models.CASCADE, related_name='articoli')
 
     def __str__(self):
-        return self.titolo7
+        return self.titolo
 
 #PASSO 14 È ANCORA DA FARE
 
