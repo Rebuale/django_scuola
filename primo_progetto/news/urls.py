@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import home, articoloDetailsView, listaArticoli
+from .views import home, index, articoloDetailsView, listaArticoli, queryBase
 app_name="news"
 urlpatterns = [
     path("",home,name="homepage"),
+    path("index/", index, name="index"),
+    path("query/", queryBase, name="query"),
     path("articolo/<int:pk>", articoloDetailsView, name="articolo_details"),
     path("lista_articoli/", listaArticoli, name="lista_articoli"),
     path("lista_articoli/<int:pk>", articoloDetailsView, name="lista_articoli_dettaglio"),

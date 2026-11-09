@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Indice news{% endblock title %}
+
+{% block content %}
+    <h1>News</h1>
+    <ul>
+        <li><a href="{% url 'news:homepage' %}">Articoli e giornalisti</a></li>
+        <li><a href="{% url 'news:lista_articoli' %}">Lista degli articoli</a></li>
+        <li><a href="{% url 'news:query' %}">Query database news</a></li>
+    </ul>
+
+    <h2>Dettagli degli articoli</h2>
+    <ul>
+        {% for articolo in articoli %}
+            <li><a href="{% url 'news:articolo_details' articolo.pk %}">{{ articolo.titolo }}</a></li>
+        {% empty %}
+            <li>Non ci sono ancora articoli.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

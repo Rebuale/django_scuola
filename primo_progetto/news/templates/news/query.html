@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Query database news{% endblock title %}
+
+{% block content %}
+    <h1>Query database news</h1>
+    <p>Risultati delle interrogazioni sugli articoli e sui giornalisti.</p>
+
+    {% for result in query_results %}
+        <section class="mb-4">
+            <h2 class="h4">{{ result.label }}</h2>
+
+            {% if result.type == 'count' %}
+                <p>{{ result.value }}</p>
+            {% elif result.type == 'articles' %}
+                <ul>
+                    {% for articolo in result.value %}
+                        <li>
+                            <a href="{% url 'news:articolo_details' articolo.pk %}">{{ articolo.titolo }}</a>
+                            — {{ articolo.giornalista }}
+                            {% if articolo.data %}({{ articolo.data|date:"d/m/Y" }}){% endif %}
+                            {% if articolo.visualizzazioni %}· {{ articolo.visualizzazioni }} visualizzazioni{% endif %}
+                        </li>
+                    {% empty %}
+                        <li>Nessun articolo trovato.</li>
+                    {% endfor %}
+                </ul>
+            {% elif result.type == 'article' %}
+                {% if result.value %}
+                    <p><a href="{% url 'news:articolo_details' result.value.pk %}">{{ result.value.titolo }}</a> — {{ result.value.giornalista }}</p>
+                {% else %}
+                    <p>Nessun articolo trovato.</p>
+                {% endif %}
+            {% elif result.type == 'journalists' %}
+                <ul>
+                    {% for giornalista in result.value %}
+                        <li>{{ giornalista }} — <a href="{% url 'news:lista_articoli_giornalista' giornalista.pk %}">Vedi gli articoli</a></li>
+                    {% empty %}
+                        <li>Nessun giornalista trovato.</li>
+                    {% endfor %}
+                </ul>
+            {% elif result.type == 'journalist' %}
+                {% if result.value %}
+                    <p>{{ result.value }}</p>
+                {% else %}
+                    <p>Nessun giornalista trovato.</p>
+                {% endif %}
+            {% endif %}
+        </section>
+    {% endfor %}
+{% endblock content %}

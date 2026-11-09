@@ -54,9 +54,9 @@
                         </ul>
                     </li>
 
-                    <!-- Dropdown Seconda app -->
+                    <!-- Dropdown Prova Pratica -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="secondaAppDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="provaPraticaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Prova Pratica
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="secondaAppDropdown">
@@ -64,6 +64,18 @@
                             <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:massimo' %}">Massimo</a></li>
                              <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:pari' %}">Pari</a></li>   
                             <li><a class="dropdown-item" href="{% url 'prova_pratica_1_B:studenti' %}">Studente</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown News -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'news:index' %}">Home news</a></li>
+                            <li><a class="dropdown-item" href="{% url 'news:homepage' %}">Home news</a></li>
+                            <li><a class="dropdown-item" href="{% url 'news:lista_articoli' %}">Tutti gli articoli</a></li>
+                            <li><a class="dropdown-item" href="{% url 'news:query' %}">Query database</a></li>
                         </ul>
                     </li>
                 </ul>
