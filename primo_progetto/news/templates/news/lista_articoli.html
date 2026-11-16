@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if giornalista %}
+        Articoli di {{ giornalista }}
+    {% else %}
+        Tutti gli articoli
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <h4>Articoli:</h4>
+    {% for articolo in articoli %}
+        <p><strong>Titolo: </strong><a href="{% url 'news:articolo_details' articolo.pk %}">{{ articolo.titolo }}</a></p>
+        <p><strong>Contenuto: </strong>{{ articolo.contenuto }}</p>
+        <p><strong>Autore: </strong><a href="{% url 'news:giornalista_details' articolo.giornalista.id %}">{{ articolo.giornalista }}</a></p>
+        <hr>
+    {% endfor %}
+{% endblock content %}

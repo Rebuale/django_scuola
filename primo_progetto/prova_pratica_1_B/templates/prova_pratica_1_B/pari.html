@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Pari{% endblock %}
+{% block content %}
+    {%if i >= 15%}
+        <P style="color: green;">Numeri pari nella lista: {{i}}</P>
+    {% else %}
+        <p style="color: red;">Numeri pari nella lista: {{i}}</p>
+    {%endif%}
+    {% for x in lista %}
+        <p>{{x}}</p>
+    {%endfor%}
+{% endblock content %}
