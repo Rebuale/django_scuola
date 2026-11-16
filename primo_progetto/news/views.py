@@ -54,6 +54,12 @@ def listaArticoli(request, pk=None):
     context = {"articoli": articoli, "giornalista": giornalista}
     return render(request, "news/lista_articoli.html", context)
 
+def giornalistaDetails(request, pk):
+    giornalista = get_object_or_404(Giornalista, pk=pk)
+    articoli = Articolo.objects.filter(giornalista=giornalista)
+    context = {"giornalista" : giornalista, "articoli" : articoli}
+    return render(request, "news/giornalista_details.html", context)
+
 def queryBase(request):
     # Tutti gli articoli scritti da giornalisti di un certo cognome.
     articoli_cognome = Articolo.objects.filter(giornalista__cognome="Rossi")
@@ -131,11 +137,11 @@ def queryBase(request):
     articoli_con_or = Articolo.objects.filter(Q(giornalista__anno_di_nascita__gt=data) | Q(visualizzazioni__lte=visualizzazioni))
 
     # Per il NOT (~) utilizzare l'operatore Q
-    #20 ...scrivi quali articoli vengono selezionati
+
     articoli_con_not = Articolo.objects.filter(~Q(giornalista__anno_di_nascita__lt=data))
-    #oppure il metodo exclude
-    # ... spiegala
+
     articoli_con_not = Articolo.objects.exclude(giornalista__anno_di_nascita__lt=data)
+
 
     context = {
         'articoli_cognome': articoli_cognome,
