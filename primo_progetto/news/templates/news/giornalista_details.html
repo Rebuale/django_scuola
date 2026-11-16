@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Gioranlista dettaglio{% endblock title %}
+
+{% block content %}
+    <h2>Dettagli del gioranlista:</h2><br>
+    <h3>Nome: {{ giornalista.nome}} {{giornalista.cognome}}</h3>
+    <p>Data di Nasctia: {{ giornalista.anno_di_nascita}}</p>
+    <h3>Tutti i suoi articoli</h3>
+    {% for articolo in articoli %}
+        <p><strong>Titolo: </strong><a href="{% url 'news:articolo_details' articolo.pk %}">{{ articolo.titolo }}</a></p>
+        <p><strong>Contenuto: </strong>{{ articolo.contenuto }}</p>
+        <hr>
+    {% endfor %}
+{% endblock content %}
